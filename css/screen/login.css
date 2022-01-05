@@ -38,7 +38,8 @@
 }
 
 #login-form input::placeholder {
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
 }
 
 #login-form input[type="submit"] {
@@ -48,9 +49,11 @@
   padding: 20px 0px;
   border-radius: 5px;
 }
+
 #login-form a {
   text-align: center;
   text-decoration: none;
   color: inherit;
   font-size: 13px;
+  color: rgba(0, 0, 0, 0.8);
 }
