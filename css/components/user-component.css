@@ -10,7 +10,7 @@
 .user-component__avatar {
   width: 70px;
   height: 70px;
-  border-radius: 27px;
+  border-radius: 30px;
   margin-right: 20px;
 }
 .user-component__title {
@@ -18,9 +18,9 @@
   font-size: 20px;
 }
 .usere-component__subtitle {
-  margin-top: 8px;
+  margin-top: 9px;
   font-size: 17px;
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--font-grey);
 }
 
 .user-component__avatar--xl {
@@ -38,5 +38,17 @@
 }
 
 .user-component__column:last-child {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.user-component__time {
+  margin-bottom: 9px;
+  display: block;
+  font-size: 15px;
+}
+
+.user-component-chats {
+  margin-bottom: 20px;
 }
