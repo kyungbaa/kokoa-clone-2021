@@ -17,3 +17,6 @@
 .alt-header__coulumn:last-child {
   margin-left: auto;
 }
+.alt-header__coulumn i:last-child {
+  margin-left: 15px;
+}
