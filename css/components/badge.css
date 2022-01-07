@@ -21,7 +21,8 @@
 }
 
 .screen-header__title__dot {
-  left: 73px;
+  position: absolute;
+  right: -173px;
   top: -23px;
 }
 .nav__list__btn__dot {

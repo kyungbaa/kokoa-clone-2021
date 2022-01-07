@@ -8,11 +8,12 @@
 @import "components/screen-header.css";
 @import "components/user-component.css";
 @import "components/badge.css";
-
+@import "components/icon-row.css";
 /*Screens*/
 @import "screen/login.css";
 @import "screen/friends.css";
 @import "screen/find.css";
+@import "screen/more.css";
 body {
   color: #2e363e;
   font-family: "Roboto", sans-serif;
