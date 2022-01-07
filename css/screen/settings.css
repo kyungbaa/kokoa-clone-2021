@@ -4,10 +4,15 @@
   font-size: 20px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .settings__setting i {
   margin-right: 20px;
   font-size: 19px;
   opacity: 0.9;
+}
+
+.settings__setting-column:last-child {
+  color: var(--font-grey);
 }
