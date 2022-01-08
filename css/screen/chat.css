@@ -1,6 +1,6 @@
 #chat-screen {
   background-color: #abc1d1;
-  height: 11000vh;
+  /*height: 100vh;*/
 }
 
 #chat-screen .alt-header,
@@ -9,6 +9,7 @@
   width: 100%;
   box-sizing: border-box;
   background-color: #abc1d1;
+  opacity: 0.9;
   top: 0px;
 }
 #chat-screen .alt-header {
@@ -19,11 +20,27 @@
   z-index: 2;
 }
 
+@keyframes fadeIn {
+  0% {
+    transform: none;
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
 .main-chat {
-  margin-top: 120px;
+  margin-top: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .chat__timestamp {
@@ -35,10 +52,23 @@
   margin-bottom: 25px;
 }
 
+@keyframes messagerowShooting {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
 .message-row {
+  opacity: 0;
   width: 100%;
   display: flex;
   margin-bottom: 25px;
+  animation: messagerowShooting 0.4s ease-in-out forwards;
+  animation-delay: 0.6s;
 }
 
 .message-row img {
@@ -71,8 +101,22 @@
   font-size: 14px;
 }
 
+@keyframes messagerowOwnShooting {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .message-row--own {
+  opacity: 0;
   justify-content: flex-end;
+  animation: messagerowOwnShooting 0.4s ease-in-out forwards;
+  animation-delay: 0.9s;
 }
 
 .message-row--own .message__bubble {
@@ -106,10 +150,14 @@ flex의 자식들만 가능한 순서 바꾸기 :
   width: 100%;
   background-color: white;
   display: flex;
-  justify-content: space-between;
-  padding: 5px 25px;
+  justify-content: space-around;
+  padding: 5px 30px;
   box-sizing: border-box;
   align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+.reply .reply__column ::placeholder {
+  font-size: 14px;
 }
 .reply .reply__column:first-child {
   width: 10%;
@@ -127,6 +175,7 @@ flex의 자식들만 가능한 순서 바꾸기 :
   width: 100%;
   border: var(--main-border);
   border-radius: 20px;
+  transition: all 0.3s ease-in-out;
 }
 .reply__column:last-child > i,
 .reply__column:last-child button {
@@ -135,9 +184,8 @@ flex의 자식들만 가능한 순서 바꾸기 :
   top: 3px;
 }
 .reply__column:last-child i {
-  right: 40px;
+  right: 25px;
   top: 9px;
-  border: solid;
 }
 
 .reply__column:last-child button {
@@ -154,4 +202,30 @@ flex의 자식들만 가능한 순서 바꾸기 :
 .reply__column button:focus,
 .reply__column button:active {
   outline: none;
+}
+
+.reply .reply__column:first-child,
+.reply .fa-smile,
+.reply button {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* 
+reply 내에 focus된 것이 있는지 확인하는 within
+ > reply가 focus 된것이 참이라면 실행한다.
+*/
+
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-smile,
+.reply:focus-within button {
+  opacity: 0;
+}
+
+.reply:focus-within input {
+  width: 93vw;
+  transform: translateX(-14%) translateY(-80px);
+}
+
+.reply:focus-within {
+  transform: translateY(80px);
 }
