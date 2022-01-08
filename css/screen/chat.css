@@ -1,3 +1,157 @@
 #chat-screen {
   background-color: #abc1d1;
+  height: 11000vh;
+}
+
+#chat-screen .alt-header,
+#chat-screen .status-bar {
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #abc1d1;
+  top: 0px;
+}
+#chat-screen .alt-header {
+  top: 25px;
+  z-index: 1;
+}
+#chat-screen .status-bar {
+  z-index: 2;
+}
+
+.main-chat {
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat__timestamp {
+  color: white;
+  background-color: #92a4b2;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.message-row {
+  width: 100%;
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.message-row img {
+  width: 40px;
+  height: 40px;
+  border-radius: 17px;
+  margin-right: 15px;
+}
+
+.message_author {
+  margin-bottom: 5px;
+  display: block;
+}
+.message__info {
+  display: flex;
+  align-items: flex-end;
+}
+
+.message__bubble {
+  background-color: white;
+  padding: 10px 13px;
+  font-size: 18px;
+  border-radius: 13px;
+  border-top-left-radius: 0;
+  margin-right: 5px;
+}
+.message__time,
+.message_author {
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.message-row--own {
+  justify-content: flex-end;
+}
+
+.message-row--own .message__bubble {
+  background-color: var(--yellow);
+  border-top-right-radius: 0;
+  border-top-left-radius: 13px;
+  margin-right: 0px;
+  margin-left: 5px;
+}
+
+/* 
+flex의 자식들만 가능한 순서 바꾸기 :
+여기서도 가능하지만 코드가 길어져서 flex-direction: row-reverse;로 대체했음
+
+.message-row--own .message__bubble {
+  order: 1;
+}
+.message-row--own .message__time {
+  order: 0;
+}
+*/
+/*html 수정 없이 css 만으로 순서 modifier의 바꾸기*/
+.message-row--own .message__info {
+  flex-direction: row-reverse;
+}
+
+.reply {
+  position: fixed;
+  /*height: 60px;*/
+  bottom: 0px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 25px;
+  box-sizing: border-box;
+  align-items: center;
+}
+.reply .reply__column:first-child {
+  width: 10%;
+}
+.reply .reply__column:last-child {
+  width: 90%;
+  position: relative;
+}
+
+.reply i {
+  opacity: 0.5;
+}
+.reply input {
+  padding: 11px;
+  width: 100%;
+  border: var(--main-border);
+  border-radius: 20px;
+}
+.reply__column:last-child > i,
+.reply__column:last-child button {
+  position: absolute;
+  right: -20px;
+  top: 3px;
+}
+.reply__column:last-child i {
+  right: 40px;
+  top: 9px;
+  border: solid;
+}
+
+.reply__column:last-child button {
+  background-color: var(--yellow);
+  border: none;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+}
+.reply__column button i {
+  opacity: 1;
+}
+
+.reply__column button:focus,
+.reply__column button:active {
+  outline: none;
 }

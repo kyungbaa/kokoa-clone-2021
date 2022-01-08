@@ -1,9 +1,13 @@
 .alt-header {
-  padding: 25px 25px 18px 25px;
+  padding: 25px;
   margin-bottom: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.alt-header__coulumn {
+  width: 33%;
 }
 
 .alt-header__title {
@@ -14,9 +18,20 @@
 .alt-header__coulumn:first-child {
   margin-right: auto;
 }
+
+.alt-header__coulumn:nth-child(2) {
+  text-align: center;
+}
 .alt-header__coulumn:last-child {
   margin-left: auto;
+  display: flex;
+  justify-content: end;
 }
-.alt-header__coulumn i:last-child {
-  margin-left: 15px;
+
+.alt-header__coulumn span:last-child {
+  margin-left: 20px;
+}
+
+.main-chat {
+  margin-top: 45px;
 }
