@@ -40,6 +40,9 @@
   font-size: 27px;
   margin-bottom: 10px;
 }
+.more-suggestions__icons > :nth-child(3) i {
+  color: tomato;
+}
 .more-suggestions__icon-image img {
   width: 60px;
   height: 60px;

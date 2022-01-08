@@ -1,0 +1,20 @@
+#no-mobile {
+  position: absolute;
+  z-index: 999;
+  height: 100vh;
+  background-color: var(--yellow);
+  width: 100vw;
+  display: flex;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  transition: all 0.5s ease-in-out;
+}
+/* 가로 길이가 645보다 작다면  no mobile 화면은 가려지게 된다.*/
+@media screen and (max-width: 645px) {
+  #no-mobile {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}

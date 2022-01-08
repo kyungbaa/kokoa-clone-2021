@@ -154,7 +154,7 @@ flex의 자식들만 가능한 순서 바꾸기 :
   padding: 5px 30px;
   box-sizing: border-box;
   align-items: center;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 .reply .reply__column ::placeholder {
   font-size: 14px;
@@ -221,11 +221,14 @@ reply 내에 focus된 것이 있는지 확인하는 within
   opacity: 0;
 }
 
-.reply:focus-within input {
+/* input 창 포커스 시 input  창이  x축으로 이동 y축으로 이동 
+실제로 위로 올라가는건 아니고 reply가 이동할때 제자리에서 width값만 변경되도록 하였다. */
+.reply input:focus {
   width: 93vw;
   transform: translateX(-14%) translateY(-80px);
 }
 
+/*ocus-within  y축으로 이동한다.*/
 .reply:focus-within {
   transform: translateY(80px);
 }
